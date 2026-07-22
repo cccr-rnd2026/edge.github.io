@@ -10,8 +10,8 @@ import {themes as prismThemes} from 'prism-react-renderer';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: '엣지 AI 컴퓨팅 서버 시스템 : OpenOn-EdgeX',
+  tagline: '엣지 AI 학습 및 지능의 동시 제공이 가능한 시스템 SW 기술 개발',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -20,15 +20,17 @@ const config = {
   },
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://cccr-rnd2026.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/edge.github.io/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'cccr-rnd2026', // Usually your GitHub org/user name.
+  projectName: 'edge.github.io', // Usually your repo name.
+  deploymentBranch: 'main',
+  trailingSlash: false,
 
   onBrokenLinks: 'throw',
 
@@ -50,7 +52,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/cccr-rnd2026/edge.github.io.git',
         },
         blog: {
           showReadingTime: true,
@@ -61,7 +63,7 @@ const config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/cccr-rnd2026/edge.github.io.git',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -83,22 +85,26 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: 'EdgeAI Project',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'EdgeAI Logo',
+          src: 'img/logo.png',
         },
         items: [
+          // 원하는 메뉴 구성으로 변경
+          {to: '/#about', label: 'About', position: 'left'},
+          {to: '/#technology', label: 'Technology', position: 'left'},
+          {to: '/#features', label: 'Features', position: 'left'},
           {
             type: 'docSidebar',
             sidebarId: 'tutorialSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Guide', // Tutorial 대신 Doc으로 변경
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {to: '/#contact', label: 'Contact', position: 'left'},
           {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
+            href: '#',
+            label: 'ENG',
             position: 'right',
           },
         ],
@@ -107,46 +113,23 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+              title: 'Menu', 
             items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
-            ],
-          },
-          {
-            title: 'Community',
-            items: [
-              {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
-              },
-              {
-                label: 'X',
-                href: 'https://x.com/docusaurus',
-              },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
-              {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
-              },
+              { label: 'Home', to: '/' },
+              { label: 'About', to: '/#about' },
+              { label: 'Technology', to: '/#technology' },
+              { label: 'Features', to: '/#features' },
+              { label: 'Guide', to: '/docs/intro' },
+              { label: 'Contact', to: '/#contact' },
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `
+          Copyright © ${new Date().getFullYear()} EdgeAI Project, Inc. Built with Docusaurus.<br/>
+          <span style="font-size: 0.85rem; color: #94a3b8; display: block; margin-top: 15px; line-height: 1.5;">
+            This project is supported by IITP grant funded by the Korea government(MSIT) (No. 2025-25441574, Development of System Software for Simultaneous Provision of Edge AI Training and Intelligence)
+          </span>
+        `,
       },
       prism: {
         theme: prismThemes.github,
